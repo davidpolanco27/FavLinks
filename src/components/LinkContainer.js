@@ -1,23 +1,22 @@
 import React from 'react'
-// import Table from './Table';
-// import Form from './Form';
+import Table from './Table';
+import Form from './Form';
 
 class LinkContainer extends React.Component {
   constructor(props) {
     super(props)
     /* TODO - Create state object for storing favLinks */
+    this.state = {Links: []}
   }
 
   handleRemove = (index) => {
-    /*
-            TODO - Create logic for setting the state to filter array and remove favLink at index
-        */
+    const newLinks = this.state.Links.filter((ele, ind) => ind !== index);
+    this.setState({Links: newLinks})
   }
 
   handleSubmit = (favLink) => {
-    /*
-            TODO - Create logic to setState and add new favLink to favLinks array in state
-        */
+    console.log('YURRRRR')
+    this.setState({Links: [...this.state.Links, favLink]})
   }
 
   render() {
@@ -25,15 +24,19 @@ class LinkContainer extends React.Component {
       <div className="container">
         <h1>My Favorite Links</h1>
         <p>Add a new url with a name and link to the table.</p>
-        {/*TODO - Add Table Component */}
+        <Table linkData = {this.state.Links} removeLink = {this.handleRemove} />
 
         <br />
 
-        <h3>Add New</h3>
-        {/*TODO - Add Form Component */}
+        {/* <h3>Add New</h3>
+        <h5>Name</h5>
+        <input type = "text"/>
+        <h5>URL</h5>
+        <input type = "text"/> */}
+        <Form addNew = {this.handleSubmit} /> 
       </div>
     )
   }
 }
 
-export default LinkContainer
+export default LinkContainer;
