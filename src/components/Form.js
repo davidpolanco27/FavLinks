@@ -9,14 +9,14 @@ class Form extends Component {
 
         this.onFormSubmit = this.onFormSubmit.bind(this);
         
-        /*
-            TODO - set initial state for link name and URL 
-        */
+        
+           // TODO - set initial state for link name and URL 
+        
     }
 
     handleChange = event => {
         /*
-            TODO - Logic for changing state based on form changes
+            //TODO - Logic for changing state based on form changes
         */
         if (event.target.id === "link"){
             this.setState({name: event.target.value});
@@ -39,9 +39,11 @@ class Form extends Component {
 
     render() {
 
-        /* TODO - Logic for returning a form element with labels and inputs for link name and URL */
+         //TODO - Logic for returning a form element with labels and inputs for link name and URL 
+
         return(
             <form>
+                
                 <label for="link">Name : </label>
                 <input type="text" id="link" onChange={(event) =>this.handleChange(event)}/>      
                 <label for="url">URL : </label>

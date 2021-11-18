@@ -34,13 +34,13 @@ const Table = (props) => {
     
     //TODO - return <table> component, TableHeader and TableBody  
     // const { linkData, removeLink } = props;
-     return (
-         <div>
-             {TableHeader()}
-             {TableBody(props)}
-             
-         </div>
-     ) 
+    return (
+        <table>
+            <TableHeader />,
+            <TableBody linkData={props.linkData} removeLink={props.removeLink}/>
+        </table>
+    )
+
 }
 
 export default Table;
